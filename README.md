@@ -1,6 +1,6 @@
-In this project, i create a mini micro-services system, which has 2 service : Identity and User  
-Identity Svc has 2 endpoints : Insert User into database 1 (db1) & Get user's information from database 1 (db1)  
-Users Svc has only 1 endpoint : Sync data, this endpoint call to Identity Svc to get user's information, if user's infor is exist, User svc will write to database 2 (db2)  
+In this project, i create a mini micro-services system, which has 2 service : **Identity** and **User** 
+Identity Svc has 2 endpoints : **Insert User into database 1** (db1) & **Get user's information from database 1** (db1)  
+Users Svc has only 1 endpoint : **Sync data**, this endpoint call to Identity Svc to get user's information, if user's infor is exist, User svc will **write to database 2** (db2)  
 All the endpoints are called via Grpc  
 
 How to run this project:  
