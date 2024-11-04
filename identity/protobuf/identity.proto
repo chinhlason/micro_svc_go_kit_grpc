@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "../protobuf";
+
+import "google/api/annotations.proto";
+
+service IdentityService {
+  rpc InsertUser(InsertReq) returns (InsertRes){
+    option (google.api.http) = {
+        post: "/insert"
+        body: "*"
+    };
+  }
+
+  rpc GetUser(GetReq) returns (GetRes) {
+    option (google.api.http) = {
+        get: "/get"
+    };
+  }
+}
+
+message InsertReq {
+  string username = 1;
+  string password = 2;
+}
+
+message InsertRes {
+  string token = 1;
+}
+
+message GetReq {
+  string username = 1;
+}
+
+message GetRes {
+  int64 id = 1;
+  string username = 2;
+  string password = 3;
+}
