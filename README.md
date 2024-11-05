@@ -4,8 +4,7 @@ Users Svc has only 1 endpoint : **Sync data**, this endpoint call to Identity Sv
 All the endpoints are called via Grpc  
 And i also create a grpc gateway, it works as a reverse proxy, which convert http request to grpc request and vice versa  
 
-How to run this project:  
-**Step 0:** Delete 2 folders db1, db2     
+How to run this project:     
 **Step 1:** Run the Docker container by "docker-compose up -d"  
 **Step 2:** Migrate database using **Goose** by command "make g-up" (Move to folder directory first)  
 **Step 3:** Run main.go file in folder cmd  
@@ -24,7 +23,9 @@ With HTTP endpoints, there are 3 endpoints, you can test them by Postman or curl
    "password" : "gateway-psw"
    }'
 2. curl --location 'http://localhost:8080/get/admin' (you can change 'admin' to username you want to get)
-3. curl --location 'http://localhost:8088/sync/gateway' (same with 'gateway', you can change to another username)  
+3. curl --location 'http://localhost:8088/sync/gateway' (same with 'gateway', you can change to another username)
+
+
 **If you start a **common gateway in folder /gateway**, you can test the endpoint by Postman, the endpoint is :** 
     http://localhost:8089/v1/insert  
     http://localhost:8089/v1/get/admin  
