@@ -26,7 +26,7 @@ With HTTP endpoints, there are 3 endpoints, you can test them by Postman or curl
 3. curl --location 'http://localhost:8088/sync/gateway' (same with 'gateway', you can change to another username)
 
 
-**If you start a **common gateway in folder /gateway**, you can test the endpoint by Postman, the endpoint is :** 
+**If you start a **common gateway in folder /gateway**, you can test the endpoint by Postman, the endpoint is :**  
     http://localhost:8089/v1/insert  
     http://localhost:8089/v1/get/admin  
     http://localhost:8089/v1/sync/gateway  
