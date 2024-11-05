@@ -38,3 +38,9 @@ docker exec -it db1 psql -U postgres -d db1
 
 docker exec -it db2 psql -U postgres -d db2  
 -> select * from db2; to get data from database db2
+
+Library in use :  
++ Go kit : https://github.com/go-kit/kit  
++ Goose : https://github.com/pressly/goose  
++ Grpc-gateway : https://github.com/grpc-ecosystem/grpc-gateway  
++ Postgres : https://github.com/lib/pq  
