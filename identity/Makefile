@@ -15,3 +15,9 @@ g-gen:
         --go_out=./protobuf --go_opt paths=source_relative \
         --go-grpc_out=./protobuf --go-grpc_opt paths=source_relative \
         --grpc-gateway_out=./protobuf --grpc-gateway_opt paths=source_relative
+
+apg-gen:
+	@protoc -I . --proto_path=protobuf $(PROTO_FILE) \
+		--go_out=../gateway/protobuf --go_opt paths=source_relative \
+		--go-grpc_out=../gateway/protobuf --go-grpc_opt paths=source_relative \
+		--grpc-gateway_out=../gateway/protobuf --grpc-gateway_opt paths=source_relative
