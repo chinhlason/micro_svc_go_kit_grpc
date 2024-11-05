@@ -9,7 +9,7 @@ import "google/api/annotations.proto";
 service UserService {
   rpc SyncUser(SyncReq) returns (SyncRes) {
     option (google.api.http) = {
-      get: "/user/get"
+      get: "/sync/{username}"
     };
   }
 }

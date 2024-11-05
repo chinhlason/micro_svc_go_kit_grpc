@@ -36,12 +36,20 @@ func (s *grpcServer) SyncUser(ctx context.Context, req *pb.SyncReq) (*pb.SyncRes
 	return resp.(*pb.SyncRes), nil
 }
 
+//---------------------------------------- DECODE ----------------------------------------//
+
 func decodeGRPCSyncUserRequest(_ context.Context, grpcReq interface{}) (interface{}, error) {
 	req := grpcReq.(*pb.SyncReq)
 	return req, nil
 }
 
+//----------------------------------------------------------------------------------------//
+
+//---------------------------------------- ENCODE ----------------------------------------//
+
 func encodeGRPCSyncUserResponse(_ context.Context, response interface{}) (interface{}, error) {
 	resp := response.(*pb.SyncRes)
 	return resp, nil
 }
+
+//----------------------------------------------------------------------------------------//

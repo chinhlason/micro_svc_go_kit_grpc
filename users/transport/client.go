@@ -43,12 +43,18 @@ func NewGrpcClient(conn *grpc.ClientConn, logger log.Logger) service.IdentitySer
 	}
 }
 
+//---------------------------------------- ENCODE ----------------------------------------//
+
 func encodeRequest(_ context.Context, request interface{}) (interface{}, error) {
 	req := request.(data.GetReq)
 	return &protobuf.GetReq{
 		Username: req.Username,
 	}, nil
 }
+
+//----------------------------------------------------------------------------------------//
+
+//---------------------------------------- DECODE ----------------------------------------//
 
 func decodeResponse(_ context.Context, grpcResponse interface{}) (interface{}, error) {
 	response := grpcResponse.(*protobuf.GetRes)
@@ -58,3 +64,5 @@ func decodeResponse(_ context.Context, grpcResponse interface{}) (interface{}, e
 		Password: response.Password,
 	}, nil
 }
+
+//----------------------------------------------------------------------------------------//

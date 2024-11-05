@@ -33,6 +33,7 @@ func (r *Repository) Select(ctx context.Context, username string) (User, error) 
 		return User{}, err
 	}
 	defer rows.Close()
+	fmt.Println("rows: ", rows)
 	var user []User
 	for rows.Next() {
 		var u User

@@ -16,7 +16,7 @@ service IdentityService {
 
   rpc GetUser(GetReq) returns (GetRes) {
     option (google.api.http) = {
-        get: "/get"
+        get: "/get/{username}"
     };
   }
 }
