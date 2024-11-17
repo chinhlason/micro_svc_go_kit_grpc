@@ -1,10 +1,11 @@
+# Microservices with Go-kit and gRPC-gateway
 In this project, i create a mini micro-services system, which has 2 service : **Identity** and **User**  
 Identity Svc has 2 endpoints : **Insert User into database 1** (db1) & **Get user's information from database 1** (db1)  
 Users Svc has only 1 endpoint : **Sync data**, this endpoint call to Identity Svc to get user's information, if user's infor is exist, User svc will **write to database 2** (db2)  
 All the endpoints are called via Grpc  
 And i also create a grpc gateway, it works as a reverse proxy, which convert http request to grpc request and vice versa  
 
-How to run this project:     
+## How to run this project:     
 **Step 1:** Run the Docker container by `docker-compose up -d`  
 **Step 2:** Migrate database using **Goose** by command `make g-up` (Move to folder directory first)  
 **Step 3:** Run main.go file in folder cmd  
